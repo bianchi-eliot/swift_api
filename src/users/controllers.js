@@ -17,9 +17,9 @@ async function changeBuildingPresence(req, res) {
     try {
         const userId = req.params.userId
         const { buildingId, date } = req.body
-        usersServices.changeBuildingPresence(userId, { buildingId, date })
+        await usersServices.changeBuildingPresence(userId, { buildingId, date })
 
-        res.status(204).send(user)
+        res.sendStatus(204)
     } catch(err) {
         res.send('An error occurred')
     }
@@ -29,11 +29,9 @@ async function updateUser(req, res) {
     try {
         const userId = req.params.userId
         const { firstName, lastName, occupation } = req.body
-        const updatedUser = usersServices.updateUser(userId, { firstName, lastName, occupation })
+        await usersServices.updateUser(userId, { firstName, lastName, occupation })
 
-        const status = updatedUser === null ? 204 : 200
-
-        res.status(status).send(updatedUser)
+        res.sendStatus(204)
     } catch(err) {
         res.send('An error occurred')
     }

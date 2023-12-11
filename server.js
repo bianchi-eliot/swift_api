@@ -11,6 +11,7 @@ const usersRoutes = require('./src/users/routes')
 const app = express()
 
 app.use(cors())
+app.use(express.static(`${__dirname}/static`))
 app.use(express.json())
 
 app.use('/buildings', buildingsRoutes)
@@ -22,5 +23,5 @@ const PORT = process.env.SERVER_PORT
 app.listen(PORT, async() => {
     console.log(`Listen on port ${PORT}`)
     await client.connect()
-    console.log(`Connected to database`)
+    console.log('Connected to database')
 })

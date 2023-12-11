@@ -2,4 +2,4 @@ GET http://localhost:3000/buildings
 
 ###
 
-GET http://localhost:3000/buildings/1
+GET http://localhost:3000/buildings/3

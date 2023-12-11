@@ -64,15 +64,16 @@ async function populateTables() {
     await client.query(`
         INSERT INTO users (first_name, last_name, image_url, occupation, created_at, in_building_since, building_id)
         VALUES
-            ('Alice', 'DEFAME', 'http://localhost:3000/static/images/alice.png', 1, '2023-01-01 12:00:00', NULL, 1),
-            ('Bob', 'SMITH', 'http://localhost:3000/static/images/bob.png', 2, '2023-02-15 08:30:00', '2023-02-15 09:00:00', 2),
-            ('Charlie', 'JOHNSON', 'http://localhost:3000/static/images/charlie.png', 3, '2023-03-20 10:45:00', '2023-03-20 11:30:00', 3),
-            ('David', 'WILLIAMS', 'http://localhost:3000/static/images/david.png', 4, '2023-04-10 14:20:00', NULL, NULL),
-            ('Eva', 'MILLER', 'http://localhost:3000/static/images/eva.png', 5, '2023-05-05 16:00:00', '2023-05-05 17:30:00', 1),
-            ('Frank', 'BROWN', 'http://localhost:3000/static/images/frank.png', 6, '2023-06-12 09:30:00', NULL, NULL),
-            ('Grace', 'DAVIS', 'http://localhost:3000/static/images/grace.png', 7, '2023-07-08 13:45:00', '2023-07-08 14:15:00', 2),
-            ('Henry', 'ANDERSON', 'http://localhost:3000/static/images/henry.png', 8, '2023-08-25 11:00:00', NULL, NULL),
-            ('Ivy', 'THOMAS', 'http://localhost:3000/static/images/ivy.png', 9, '2023-09-18 18:00:00', '2023-09-18 18:45:00', 3);
+            ('Alice', 'DEFAME', 'http://localhost:3000/images/alice.jpeg', 1, '2023-01-01 12:00:00', NULL, 1),
+            ('Bob', 'SMITH', 'http://localhost:3000/images/bob.jpeg', 2, '2023-02-15 08:30:00', '2023-02-15 09:00:00', 2),
+            ('Charlie', 'JOHNSON', 'http://localhost:3000/images/charlie.png', 3, '2023-03-20 10:45:00', '2023-03-20 11:30:00', 3),
+            ('David', 'WILLIAMS', 'http://localhost:3000/images/david.jpeg', 4, '2023-04-10 14:20:00', NULL, NULL),
+            ('Eva', 'MILLER', 'http://localhost:3000/images/eva.jpeg', 5, '2023-05-05 16:00:00', '2023-05-05 17:30:00', 1),
+            ('Frank', 'BROWN', 'http://localhost:3000/images/frank.png', 6, '2023-06-12 09:30:00', NULL, NULL),
+            ('Grace', 'DAVIS', 'http://localhost:3000/images/grace.jpeg', 7, '2023-07-08 13:45:00', '2023-07-08 14:15:00', 2),
+            ('Henry', 'ANDERSON', 'http://localhost:3000/images/henry.png', 8, '2023-08-25 11:00:00', NULL, NULL),
+            ('Ivy', 'THOMAS', 'http://localhost:3000/images/ivy.png', 9, '2023-09-18 18:00:00', '2023-09-18 18:45:00', 3),
+            ('Eliot', 'BIANCHI', 'http://localhost:3000/images/eliot.jpg', 2, '2023-09-18 18:00:00', NULL, NULL);
     `)
 }
 
