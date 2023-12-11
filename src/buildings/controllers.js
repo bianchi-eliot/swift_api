@@ -1,5 +1,7 @@
 const buildingsServices = require('./services')
 
+const { calculateHours } = require('../../dates.tools')
+
 async function getBuildings(_, res) {
     try {
         const buildings = await buildingsServices.getBuildings()
@@ -9,11 +11,9 @@ async function getBuildings(_, res) {
             building.longitude = longitude
             building.latitude = latitude
         }
-        const status = buildings.length === 0 ? 204 : 200
 
-        res.status(status).send(buildings)
+        res.status(200).send(buildings)
     } catch(err) {
-        console.log(err.message)
         res.send('An error occurred')
     }
 }
@@ -23,11 +23,13 @@ async function getPeopleInBuilding(req, res) {
         const buildingId = req.params.buildingId
         const people = await buildingsServices.getPeopleInBuilding(buildingId)
 
-        const status = people.length === 0 ? 204 : 200
+        for(user of people) {
+            const hours = calculateHours(user.in_building_since)
+            user.in_building_since = hours
+        }
 
-        res.status(status).send(people)
+        res.status(200).send(people)
     } catch(err) {
-        console.log(err.message)
         res.send('An error occurred')
     }
 }

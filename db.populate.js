@@ -11,8 +11,8 @@ async function createTables() {
         CREATE TABLE IF NOT EXISTS buildings (
             building_id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
-            longitude NUMERIC(16,14) NOT NULL,
             latitude NUMERIC(16,14) NOT NULL,
+            longitude NUMERIC(16,14) NOT NULL,
             type VARCHAR(50) NOT NULL
         );
     `)
@@ -40,7 +40,7 @@ async function createTables() {
 
 async function populateTables() {
     await client.query(`
-        INSERT INTO buildings (name, longitude, latitude, type)
+        INSERT INTO buildings (name, latitude, longitude, type)
         VALUES
             ('L''Abc', 47.63507547448226, 6.853445240250185, 'Bar'),
             ('Chamas Tacos', 47.63379647109642, 6.857076770452414, 'Fast food'),
@@ -71,15 +71,15 @@ async function populateTables() {
     await client.query(`
         INSERT INTO users (first_name, last_name, image_url, occupation_id, created_at, in_building_since, building_id)
         VALUES
-            ('Alice', 'DEFAME', 'https://swift-api.nexford.fr/images/alice.jpeg', 1, '2023-01-01 12:00:00', NULL, 1),
-            ('Bob', 'SMITH', 'https://swift-api.nexford.fr/images/bob.jpeg', 2, '2023-02-15 08:30:00', '2023-02-15 09:00:00', 2),
-            ('Charlie', 'JOHNSON', 'https://swift-api.nexford.fr/images/charlie.png', 3, '2023-03-20 10:45:00', '2023-03-20 11:30:00', 3),
-            ('David', 'WILLIAMS', 'https://swift-api.nexford.fr/images/david.jpeg', 4, '2023-04-10 14:20:00', NULL, NULL),
-            ('Eva', 'MILLER', 'https://swift-api.nexford.fr/images/eva.jpeg', 5, '2023-05-05 16:00:00', '2023-05-05 17:30:00', 1),
-            ('Frank', 'BROWN', 'https://swift-api.nexford.fr/images/frank.png', 6, '2023-06-12 09:30:00', NULL, NULL),
-            ('Grace', 'DAVIS', 'https://swift-api.nexford.fr/images/grace.jpeg', 7, '2023-07-08 13:45:00', '2023-07-08 14:15:00', 2),
-            ('Henry', 'ANDERSON', 'https://swift-api.nexford.fr/images/henry.png', 8, '2023-08-25 11:00:00', NULL, NULL),
-            ('Ivy', 'THOMAS', 'https://swift-api.nexford.fr/images/ivy.png', 9, '2023-09-18 18:00:00', '2023-09-18 18:45:00', 3),
+            ('Alice', 'DEFAME', 'https://swift-api.nexford.fr/images/alice.jpeg', 1, '2021-01-01 12:00:00', CURRENT_TIMESTAMP, 1),
+            ('Bob', 'SMITH', 'https://swift-api.nexford.fr/images/bob.jpeg', 2, '2022-02-15 08:30:00', CURRENT_TIMESTAMP - INTERVAL '2 HOUR', 2),
+            ('Charlie', 'JOHNSON', 'https://swift-api.nexford.fr/images/charlie.png', 3, '2019-03-20 10:45:00', CURRENT_TIMESTAMP - INTERVAL '3 HOUR', 3),
+            ('David', 'WILLIAMS', 'https://swift-api.nexford.fr/images/david.jpeg', 4, '2022-04-10 14:20:00', NULL, NULL),
+            ('Eva', 'MILLER', 'https://swift-api.nexford.fr/images/eva.jpeg', 5, '2018-05-05 16:00:00', CURRENT_TIMESTAMP - INTERVAL '1 HOUR', 1),
+            ('Frank', 'BROWN', 'https://swift-api.nexford.fr/images/frank.png', 6, '2019-06-12 09:30:00', NULL, NULL),
+            ('Grace', 'DAVIS', 'https://swift-api.nexford.fr/images/grace.jpeg', 7, '2020-07-08 13:45:00', CURRENT_TIMESTAMP, 2),
+            ('Henry', 'ANDERSON', 'https://swift-api.nexford.fr/images/henry.png', 8, '2023-08-25 11:00:00', CURRENT_TIMESTAMP - INTERVAL '1 HOUR', 5),
+            ('Ivy', 'THOMAS', 'https://swift-api.nexford.fr/images/ivy.png', 9, '2021-09-18 18:00:00', CURRENT_TIMESTAMP, 3),
             ('Eliot', 'BIANCHI', 'https://swift-api.nexford.fr/images/eliot.jpg', 2, '2023-09-18 18:00:00', NULL, NULL);
     `)
 }

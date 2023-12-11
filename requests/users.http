@@ -2,12 +2,11 @@ GET http://localhost:3000/users/1
 
 ###
 
-PATCH http://localhost:3000/users/2
+PATCH http://localhost:3000/users/1
 Content-Type: application/json
 
 {
-    "buildingId": 2,
-    "date": "2021-12-04"
+    "buildingId": 2
 }
 
 ###
@@ -18,5 +17,5 @@ Content-Type: application/json
 {
     "firstName": "John",
     "lastName": "Doe",
-    "occupationId": 2
+    "occupationId": 9
 }
