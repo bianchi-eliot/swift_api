@@ -2,8 +2,10 @@ const pool = require('../../db')
 
 async function getUser(userId) {
     const user = await pool.query(`
-        SELECT user_id, first_name, last_name, image_url, occupation, created_at, in_building_since
+        SELECT user_id, first_name, last_name, image_url, occupations.name AS occupation, created_at, in_building_since
         FROM users
+        INNER JOIN occupations
+            ON users.occupation_id = occupations.occupation_id
         WHERE user_id = $1;
     `, [userId])
     return user.rows[0]
