@@ -11,8 +11,8 @@ async function createTables() {
         CREATE TABLE IF NOT EXISTS buildings (
             building_id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
-            longitude DECIMAL NOT NULL,
-            latitude DECIMAL NOT NULL,
+            longitude NUMERIC(16,14) NOT NULL,
+            latitude NUMERIC(16,14) NOT NULL,
             type VARCHAR(50) NOT NULL
         );
     `)

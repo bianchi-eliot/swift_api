@@ -28,11 +28,12 @@ async function changeBuildingPresence(req, res) {
 async function updateUser(req, res) {
     try {
         const userId = req.params.userId
-        const { firstName, lastName, occupation } = req.body
-        await usersServices.updateUser(userId, { firstName, lastName, occupation })
+        const { firstName, lastName, occupationId } = req.body
+        await usersServices.updateUser(userId, { firstName, lastName, occupationId })
 
         res.sendStatus(204)
     } catch(err) {
+        console.log(err.message)
         res.send('An error occurred')
     }
 }

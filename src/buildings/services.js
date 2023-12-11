@@ -10,7 +10,7 @@ async function getBuildings() {
 
 async function getPeopleInBuilding(buildingId) {
     const peopleInBuilding = await pool.query(`
-        SELECT user_id, first_name, last_name, in_building_since, occupation
+        SELECT user_id, first_name, last_name, in_building_since
         FROM users
         WHERE building_id = $1;
     `, [buildingId])

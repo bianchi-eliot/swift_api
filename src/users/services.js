@@ -19,12 +19,12 @@ async function changeBuildingPresence(userId, { buildingId, date }) {
     `, [userId, buildingId, date])
 }
 
-async function updateUser(userId, { firstName, lastName, occupation }) {
+async function updateUser(userId, { firstName, lastName, occupationId }) {
     await pool.query(`
         UPDATE users
-        SET first_name = $2, last_name = $3, occupation = $4
+        SET first_name = $2, last_name = $3, occupation_id = $4
         WHERE user_id = $1;    
-    `, [userId, firstName, lastName, occupation])
+    `, [userId, firstName, lastName, occupationId])
 }
 
 module.exports = { getUser, changeBuildingPresence, updateUser }
