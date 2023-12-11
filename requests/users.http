@@ -1,0 +1,22 @@
+GET http://localhost:3000/users/1
+
+###
+
+PATCH http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+    "buildingId": 3,
+    "date": "2023-12-04"
+}
+
+###
+
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "occupation": "President"
+}
