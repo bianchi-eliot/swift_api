@@ -2,7 +2,8 @@ const client = require('../../db')
 
 async function getUser(userId) {
     const user = await client.query(`
-        SELECT user_id, first_name, last_name, image_url, occupations.name AS occupation, created_at, in_building_since, building_id
+        SELECT user_id, first_name, last_name, image_url, occupations.name AS occupation, users.occupation_id,
+            created_at, in_building_since, building_id
         FROM users
         INNER JOIN occupations
             ON users.occupation_id = occupations.occupation_id
@@ -27,7 +28,8 @@ async function updateUser(userId, { firstName, lastName, occupationId }) {
     `, [userId, firstName, lastName, occupationId])
 
     const updatedUser = await client.query(`
-        SELECT user_id, first_name, last_name, image_url, occupations.name AS occupation, created_at, in_building_since, building_id
+        SELECT user_id, first_name, last_name, image_url, occupations.name AS occupation, users.occupation_id,
+            created_at, in_building_since, building_id
         FROM users
         INNER JOIN occupations
             ON users.occupation_id = occupations.occupation_id

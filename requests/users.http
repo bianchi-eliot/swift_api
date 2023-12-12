@@ -17,5 +17,5 @@ Content-Type: application/json
 {
     "firstName": "John",
     "lastName": "Doe",
-    "occupationId": 9
+    "occupationId": 4
 }

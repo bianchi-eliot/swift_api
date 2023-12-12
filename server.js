@@ -23,5 +23,5 @@ const PORT = process.env.SERVER_PORT
 app.listen(PORT, async() => {
     console.log(`Listen on port ${PORT}`)
     await client.connect()
-    console.log('Connected to database')
+    console.log('Connected to PostgreSQL database')
 })

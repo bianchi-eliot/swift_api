@@ -80,7 +80,27 @@ async function populateTables() {
             ('Grace', 'DAVIS', 'https://swift-api.nexford.fr/images/grace.jpeg', 7, '2020-07-08 13:45:00', CURRENT_TIMESTAMP, 2),
             ('Henry', 'ANDERSON', 'https://swift-api.nexford.fr/images/henry.png', 8, '2023-08-25 11:00:00', CURRENT_TIMESTAMP - INTERVAL '1 HOUR', 5),
             ('Ivy', 'THOMAS', 'https://swift-api.nexford.fr/images/ivy.png', 9, '2021-09-18 18:00:00', CURRENT_TIMESTAMP, 3),
-            ('Eliot', 'BIANCHI', 'https://swift-api.nexford.fr/images/eliot.jpg', 2, '2023-09-18 18:00:00', NULL, NULL);
+            ('Eliot', 'BIANCHI', 'https://swift-api.nexford.fr/images/eliot.jpg', 2, '2023-09-18 18:00:00', NULL, NULL),
+            ('Fiona', 'MARTIN', 'https://swift-api.nexford.fr/images/fiona.jpg', 3, '2020-10-05 09:15:00', CURRENT_TIMESTAMP - INTERVAL '2 HOUR', 4),
+            ('George', 'ALLEN', 'https://swift-api.nexford.fr/images/george.png', 4, '2022-11-30 14:30:00', CURRENT_TIMESTAMP, 2),
+            ('Hannah', 'COOPER', 'https://swift-api.nexford.fr/images/hannah.jpeg', 5, '2019-12-25 16:45:00', CURRENT_TIMESTAMP - INTERVAL '3 HOUR', 6),
+            ('Isaac', 'ROGERS', 'https://swift-api.nexford.fr/images/isaac.jpg', 6, '2021-01-10 10:20:00', NULL, NULL),
+            ('Julia', 'EVANS', 'https://swift-api.nexford.fr/images/julia.jpeg', 7, '2018-02-15 12:00:00', CURRENT_TIMESTAMP - INTERVAL '1 HOUR', 5),
+            ('Kevin', 'YOUNG', 'https://swift-api.nexford.fr/images/kevin.png', 8, '2022-03-12 09:30:00', CURRENT_TIMESTAMP, 5),
+            ('Lily', 'COX', 'https://swift-api.nexford.fr/images/lily.jpg', 1, '2020-04-08 13:45:00', CURRENT_TIMESTAMP - INTERVAL '2 HOUR', 2),
+            ('Mason', 'WARD', 'https://swift-api.nexford.fr/images/mason.jpeg', 2, '2023-05-25 11:00:00', NULL, NULL),
+            ('Nora', 'BAKER', 'https://swift-api.nexford.fr/images/nora.png', 3, '2021-06-18 18:00:00', CURRENT_TIMESTAMP, 10),
+            ('Oscar', 'GRAY', 'https://swift-api.nexford.fr/images/oscar.jpg', 4, '2020-07-18 18:00:00', NULL, NULL),
+            ('Penelope', 'ALVAREZ', 'https://swift-api.nexford.fr/images/penelope.jpeg', 5, '2022-08-18 18:00:00', CURRENT_TIMESTAMP - INTERVAL '1 HOUR', 10),
+            ('Quinn', 'RAMIREZ', 'https://swift-api.nexford.fr/images/quinn.png', 6, '2019-09-18 18:00:00', NULL, NULL),
+            ('Riley', 'COOPER', 'https://swift-api.nexford.fr/images/riley.jpg', 7, '2021-10-18 18:00:00', CURRENT_TIMESTAMP, 1),
+            ('Samuel', 'FISHER', 'https://swift-api.nexford.fr/images/samuel.jpeg', 8, '2023-11-18 18:00:00', CURRENT_TIMESTAMP - INTERVAL '3 HOUR', 7),
+            ('Taylor', 'HALL', 'https://swift-api.nexford.fr/images/taylor.png', 2, '2022-12-18 18:00:00', NULL, NULL),
+            ('Uma', 'GARCIA', 'https://swift-api.nexford.fr/images/uma.jpeg', 1, '2020-01-18 18:00:00', CURRENT_TIMESTAMP - INTERVAL '2 HOUR', 8),
+            ('Victor', 'LOPEZ', 'https://swift-api.nexford.fr/images/victor.jpg', 3, '2021-02-18 18:00:00', NULL, NULL),
+            ('Willa', 'MORGAN', 'https://swift-api.nexford.fr/images/willa.png', 4, '2019-03-18 18:00:00', CURRENT_TIMESTAMP, 2),
+            ('Xander', 'REYES', 'https://swift-api.nexford.fr/images/xander.jpeg', 5, '2022-04-18 18:00:00', CURRENT_TIMESTAMP - INTERVAL '4 HOUR', 9),
+            ('Yara', 'THOMPSON', 'https://swift-api.nexford.fr/images/yara.jpg', 6, '2018-05-18 18:00:00', NULL, NULL);
     `)
 }
 
