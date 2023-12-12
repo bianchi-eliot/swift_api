@@ -25,7 +25,7 @@ async function changeBuildingPresence(req, res) {
         const { buildingId } = req.body
         await usersServices.changeBuildingPresence(userId, { buildingId })
 
-        res.sendStatus(204)
+        res.status(200).send('Done')
     } catch(err) {
         res.send('An error occurred')
     }

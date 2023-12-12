@@ -6,7 +6,7 @@ PATCH http://localhost:3000/users/1
 Content-Type: application/json
 
 {
-    "buildingId": 2
+    "buildingId": 1
 }
 
 ###
@@ -15,7 +15,7 @@ PUT http://localhost:3000/users/1
 Content-Type: application/json
 
 {
-    "firstName": "John",
-    "lastName": "Doe",
+    "firstName": "Test",
+    "lastName": "Test",
     "occupationId": 4
 }
