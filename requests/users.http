@@ -19,3 +19,12 @@ Content-Type: application/json
     "lastName": "Test",
     "occupationId": 4
 }
+
+###
+
+PUT http://localhost:3000/users/change-building/20
+Content-Type: application/json
+
+{
+    "buildingId": 1
+}
