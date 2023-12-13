@@ -10,9 +10,7 @@ const usersRoutes = require('./src/users/routes')
 
 const app = express()
 
-const corsOptions = {
-    methods: ['GET', 'POST', 'PUT', 'PATCH']
-}
+const corsOptions = { methods: ['GET', 'POST', 'PUT', 'PATCH'] }
   
 app.use(cors(corsOptions))
 

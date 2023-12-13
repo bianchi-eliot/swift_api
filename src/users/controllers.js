@@ -22,7 +22,8 @@ async function getUser(req, res) {
 async function changeBuildingPresence(req, res) {
     try {
         const userId = req.params.userId
-        const { buildingId } = req.body
+        let { buildingId } = req.body
+        if (buildingId === -1) buildingId = null
         await usersServices.changeBuildingPresence(userId, { buildingId })
 
         res.status(200).send('Done')
