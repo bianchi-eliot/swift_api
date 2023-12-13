@@ -10,7 +10,12 @@ const usersRoutes = require('./src/users/routes')
 
 const app = express()
 
-app.use(cors())
+const corsOptions = {
+    methods: ['GET', 'POST', 'PUT', 'PATCH']
+}
+  
+app.use(cors(corsOptions))
+
 app.use(express.static(`${__dirname}/static`))
 app.use(express.json())
 
