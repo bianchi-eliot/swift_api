@@ -1,4 +1,4 @@
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/3
 
 ###
 
@@ -22,9 +22,9 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/users/change-building/20
+PUT http://localhost:3000/users/change-building/1
 Content-Type: application/json
 
 {
-    "buildingId": 1
+    "buildingId": 2
 }

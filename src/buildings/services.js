@@ -12,7 +12,7 @@ async function getPeopleInBuilding(buildingId) {
     const peopleInBuilding = await client.query(`
         SELECT user_id, first_name, last_name, in_building_since
         FROM users
-        WHERE building_id = $1;
+        WHERE building_id = $1 AND user_id != 10;
     `, [buildingId])
     return peopleInBuilding.rows
 }
