@@ -1,4 +1,4 @@
-GET http://localhost:3000/users/3
+GET http://localhost:3000/users/1
 
 ###
 
@@ -6,7 +6,7 @@ PATCH http://localhost:3000/users/1
 Content-Type: application/json
 
 {
-    "buildingId": 1
+    "buildingId": 2
 }
 
 ###
@@ -15,9 +15,9 @@ PUT http://localhost:3000/users/1
 Content-Type: application/json
 
 {
-    "firstName": "Test",
+    "firstName": "Tes2",
     "lastName": "Test",
-    "occupationId": 4
+    "occupationId": 5
 }
 
 ###

@@ -22,10 +22,10 @@ async function changeBuildingPresence(userId, { buildingId }) {
     `, [userId, buildingId])
 
     const buildingName = await client.query(`
-        SELECT name FROM buildings WHERE building_id = $1;
+        SELECT building_id, name AS building_name FROM buildings WHERE building_id = $1;
     `, [buildingId])
 
-    return buildingName.rows[0].name
+    return buildingName.rows[0]
 }
 
 async function updateUser(userId, { firstName, lastName, occupationId }) {
