@@ -81,6 +81,7 @@ async function updateUser(req, res) {
 
         res.status(200).send(updatedUser)
     } catch(err) {
+        console.log(err.message)
         res.send('An error occurred')
     }
 }

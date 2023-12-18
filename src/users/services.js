@@ -41,7 +41,7 @@ async function updateUser(userId, { firstName, lastName, occupationId }) {
         FROM users
         INNER JOIN occupations
             ON users.occupation_id = occupations.occupation_id
-        INNER JOIN buildings
+        LEFT JOIN buildings
             ON users.building_id = buildings.building_id
         WHERE user_id = $1;
     `, [userId])
