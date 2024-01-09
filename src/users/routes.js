@@ -1,10 +1,12 @@
 const express = require('express')
 
-const { getUser, changeBuildingPresence, updateUser } = require('./controllers')
+const { getUser, addUser, changeBuildingPresence, updateUser } = require('./controllers')
 
 const router = express.Router()
 
 router.get('/:userId', getUser)
+
+router.post('/', addUser)
 
 router.patch('/:userId', changeBuildingPresence)
 

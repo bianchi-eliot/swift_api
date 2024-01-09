@@ -14,6 +14,16 @@ async function getUser(userId) {
     return user.rows[0]
 }
 
+async function addUser(firstName, lastName, imageUrl, occupationId) {
+    const result = await client.query(`
+        INSERT INTO users (first_name, last_name, image_url, occupation_id, created_at, in_building_since, building_id)
+        VALUES
+            ($1, $2, $3, $4, CURRENT_TIMESTAMP, NULL, NULL)
+        RETURNING user_id;
+    `, [firstName, lastName, imageUrl, occupationId])
+    return result.rows[0].user_id
+}
+
 async function changeBuildingPresence(userId, { buildingId }) {
     await client.query(`
         UPDATE users
@@ -48,4 +58,4 @@ async function updateUser(userId, { firstName, lastName, occupationId }) {
     return updatedUser.rows[0]
 }
 
-module.exports = { getUser, changeBuildingPresence, updateUser }
+module.exports = { getUser, addUser, changeBuildingPresence, updateUser }

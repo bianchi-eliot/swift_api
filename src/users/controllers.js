@@ -5,6 +5,7 @@ const usersServices = require('./services')
 async function getUser(req, res) {
     try {
         const userId = req.params.userId
+        console.log('redirected!' + ' ' + userId)
         const user = await usersServices.getUser(userId)
 
         if (user.building_id == null) {
@@ -30,6 +31,20 @@ async function getUser(req, res) {
         user.building_user_is_in = building_user_is_in
 
         res.status(200).send(user)
+    } catch(err) {
+        console.log(err.message)
+        res.send('An error occurred')
+    }
+}
+
+async function addUser(req, res) {
+    try {
+        const { firstName, lastName, image, occupationId } = req.body
+        const imageUrl = `https://swift-api.nexford.fr/images/${image}` 
+        const newId = await usersServices.addUser(firstName, lastName, imageUrl, occupationId)
+
+        const newUser = await usersServices.getUser(newId)
+        res.status(201).send(newUser)
     } catch(err) {
         console.log(err.message)
         res.send('An error occurred')
@@ -86,4 +101,4 @@ async function updateUser(req, res) {
     }
 }
 
-module.exports = { getUser, changeBuildingPresence, updateUser }
+module.exports = { getUser, addUser, changeBuildingPresence, updateUser }
